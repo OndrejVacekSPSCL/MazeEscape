@@ -12,7 +12,7 @@ public class Timer : MonoBehaviour {
             remainingTime -= Time.deltaTime;
         } else if (remainingTime < 0) {
             remainingTime = 0;
-            GameController.Respawn();
+            GameController.Die();
         }
         int minutes = Mathf.FloorToInt(remainingTime / 60);
         int seconds = Mathf.FloorToInt(remainingTime % 60);

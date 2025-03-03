@@ -1,7 +1,9 @@
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class GameController : MonoBehaviour
 {
+    public playerControl playerControl;
     Vector2 startPos;
     private void Start() {
         startPos = transform.position;
@@ -13,8 +15,9 @@ public class GameController : MonoBehaviour
         }
     }
 
-    void Die() {
-        Respawn();
+    public void Die() {
+        LevelManager.instance.GameOver();
+        playerControl.ChangeMovementSpeed(0);
     }
 
     public void Respawn() {

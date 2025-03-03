@@ -12,6 +12,10 @@ public class playerControl : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
 
     }
+    public void ChangeMovementSpeed(float value)
+    {
+        movementSpeed = value;
+    }
 
     // Update is called once per frame
     void Update()
