@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class FinishLine : MonoBehaviour
 {
+    public playerControl playerControl;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")
@@ -16,6 +17,7 @@ public class FinishLine : MonoBehaviour
     public void ToggleFinishPanel()
     {
         finishPanel.SetActive(!finishPanel.activeSelf);
+        playerControl.ChangeMovementSpeed(0);
     }
 
     public void ChangeScene()
