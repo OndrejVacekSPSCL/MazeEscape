@@ -26,8 +26,17 @@ public class playerControl : MonoBehaviour
         speedY = Input.GetAxisRaw("Vertical") * movementSpeed;
         rigidBody.linearVelocity = new Vector2(speedX, speedY);
 
-        //if(moveInput != Vector2.zero) { }
         animator.SetFloat("XInput", speedX);
         animator.SetFloat("YInput", speedY);
+
+        // You could also add a check for movement direction or idle state if needed
+        if (speedX != 0 || speedY != 0)
+        {
+            animator.SetBool("IsWalking", true);  
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false); // No movement, set idle
+        }
     }
 }
