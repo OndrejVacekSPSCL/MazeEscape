@@ -32,7 +32,7 @@ public class playerControl : MonoBehaviour
         // You could also add a check for movement direction or idle state if needed
         if (speedX != 0 || speedY != 0)
         {
-            animator.SetBool("IsWalking", true);  // Example, you can add an "IsMoving" parameter in Animator
+            animator.SetBool("IsWalking", true);  
         }
         else
         {

@@ -23,4 +23,8 @@ public class GameController : MonoBehaviour
     public void Respawn() {
         transform.position = startPos;
     }
+
+    public void doExitGame() {
+        Application.Quit();
+    }
 }
