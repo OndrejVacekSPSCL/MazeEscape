@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class FinishLine : MonoBehaviour
 {
     public playerControl playerControl;
+    [SerializeField] GameObject finishPanel;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")
@@ -11,8 +13,6 @@ public class FinishLine : MonoBehaviour
             ToggleFinishPanel();
         }
     }
-
-    [SerializeField] GameObject finishPanel;
 
     public void ToggleFinishPanel()
     {

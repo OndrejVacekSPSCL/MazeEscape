@@ -1,14 +1,16 @@
 using UnityEngine;
 using TMPro;
 
-public class Timer : MonoBehaviour {
+public class Timer : MonoBehaviour
+{
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float remainingTime;
 
     public GameController GameController;
     bool onoff = true;
 
-    void Update() {
+    void Update()
+    {
         if (onoff == true) { timer(); }
 
         int minutes = Mathf.FloorToInt(remainingTime / 60);
@@ -16,7 +18,8 @@ public class Timer : MonoBehaviour {
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    void timer() {
+    void timer()
+    {
         if (remainingTime > 0)
         {
             remainingTime -= Time.deltaTime;
@@ -28,7 +31,8 @@ public class Timer : MonoBehaviour {
         }
     }
 
-    public void PlayTimer(bool value) {
-        if (value == true) { onoff = true; } else { onoff = false; }
+    public void PlayTimer(bool value)
+    {
+        if (value == true) { onoff = true; } else if (value == false) { onoff = false; } else { onoff = false; }
     }
 }
