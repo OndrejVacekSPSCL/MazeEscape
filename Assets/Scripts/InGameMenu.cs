@@ -19,11 +19,19 @@ public class InGameMenu : MonoBehaviour
     [SerializeField] GameObject inGameMenu;
     [SerializeField] GameObject MenuButton;
 
-    public void ToggleMenuPanel()
+    public void ToggleMenuPanelOn()
     {
         inGameMenu.SetActive(!inGameMenu.activeSelf);
         playerControl.ChangeMovementSpeed(0);
         MenuButton.SetActive(!MenuButton.activeSelf);
+
+    }
+    public void ToggleMenuPanelOff()
+    {
+        inGameMenu.SetActive(!inGameMenu.activeSelf);
+        playerControl.ChangeMovementSpeed(10);
+        MenuButton.SetActive(!MenuButton.activeSelf);
+
     }
 
     public void ChangeScene()
