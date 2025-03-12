@@ -34,5 +34,7 @@ public class Trap : MonoBehaviour
             cooldownTimer = cooldown;
         }
         animator.SetBool("IsOn", IsOn);
+
+
     }
 }
